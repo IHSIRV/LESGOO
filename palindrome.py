@@ -16,11 +16,15 @@ def check_palindrome(*args):
         temp_str = str(temp_input)
 
         for temp_index in range(0, len(temp_str)):
+         try:
             if temp_str[temp_index] == temp_str[-1 * temp_index - 1]:
                 temp_bool_return = True
             else:
                 temp_bool_return = False
                 return {temp_input: False}
+         except ValueError:
+             print("That's not a valid number, Try again")
+
 
         return {temp_input: temp_bool_return}
 
